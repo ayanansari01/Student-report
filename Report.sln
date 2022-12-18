@@ -1,0 +1,100 @@
+using System;
+
+namespace CS_OOP
+{
+    class Student
+    {
+        private int student_number;
+        private string student_name;
+        private double student_average;
+
+        public Student(int value1, string value2, double value3)
+        {
+            student_number = value1;
+            student_name = value2;
+            student_average = value3;
+        }
+
+        public int Student_number
+        {
+            get { return student_number; }
+            set { student_number = value; }
+        }
+        public string Student_name
+        {
+            get { return student_name; }
+            set { student_name = value; }
+        }
+        public double Student_average
+        {
+            get { return student_average; }
+            set { student_average = value; }
+        }
+
+        public void output1()
+        {
+            Console.WriteLine("Student Number: " + Student_number);
+            Console.WriteLine("Student Name: " + Student_name);
+            Console.WriteLine("Student Average: " + Student_average);
+        }
+    }
+    class Graduate_Student : Student 
+    {
+        int level;
+        int year;
+        public Graduate_Student(int value4, int value5) : base(10,"Shafiq",10.2)
+        {
+            level = value4;
+            year = value5;
+        }
+
+        public int Level
+        {
+            get { return level; }
+            set { level = value; }
+        }
+        public int Year
+        {
+            get { return year; }
+            set { year = value; }
+        }
+
+        public void output2()
+        {
+            Console.WriteLine("Level: " + Level);
+            Console.WriteLine("Year: " + Year);
+        }
+    }
+
+
+    class Master : Graduate_Student
+    {
+        int newid;
+        public Master(int value6) : base(5,2001)
+        {
+            newid = value6;
+        }
+
+        public int Newid
+        {
+            get { return newid; }
+            set { newid = value; }
+        }
+
+        public void output3()
+        {
+            Console.WriteLine("New id: " + Newid);
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Student a = new Student(10, "Shafiq", 10.2);
+            a.output1();
+            Master b = new Master(20);
+            b.output2();
+            b.output3();
+        }
+    }
+}
